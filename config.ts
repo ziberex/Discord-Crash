@@ -4,4 +4,4 @@ export default {
     linkToSpam: '', // Ссылка для проспама
     channelsToCreate: 10, // кол-во каналов для создания после краша
     messagesPerChannel: 5 // кол-во сообщений на канал
-}
+};
