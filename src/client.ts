@@ -1,8 +1,8 @@
 import { Client, GatewayIntentBits } from 'discord.js';
 import Config from 'config';
-import { Logger } from 'src/logger/Logger';
-import { LogLevel } from 'src/logger/enums/LogLevel';
-import { EventsHandler } from 'src/utils/Events.handler';
+import { Logger } from '@src/logger/Logger';
+import { LogLevel } from '@src/logger/enums/LogLevel';
+import { EventsHandler } from '@src/utils/Events.handler';
 
 export class CrashClient extends Client<true> {
     public readonly config = Config;

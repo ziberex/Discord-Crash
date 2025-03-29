@@ -1,4 +1,4 @@
-import { LogLevel } from 'src/logger/enums/LogLevel';
+import { LogLevel } from '@src/logger/enums/LogLevel';
 
 export class Logger {
     public listen() {

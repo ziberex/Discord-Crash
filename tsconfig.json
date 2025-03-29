@@ -20,7 +20,10 @@
         "esModuleInterop": true,
         "baseUrl": "./",
         "outDir": "./dist",
-        "types": ["node", "bun"]
+        "types": ["node", "bun"],
+        "paths": {
+            "@src/*": ["./src/*"]
+        }
     },
     "include": ["./src/*"],
     "exclude": ["node_modules"]
