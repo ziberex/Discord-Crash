@@ -10,6 +10,7 @@
 2. Install dependencies `bun install`
 3. Fill config.ts with your data
 4. Run the bot `bun init:bot`
+5. Send !start-crash in any channel
 
 ## Need to know
 
