@@ -1,0 +1,22 @@
+{
+    "name": "crash",
+    "private": true,
+    "license": "Apache-2.0",
+    "author": {
+        "name": "anyway",
+        "url": "https://github.com/ziberex"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/node": "^22.13.14",
+        "discord-api-types": "^0.37.119"
+    },
+    "dependencies": {
+        "discord.js": "^14.18.0",
+        "glob": "^11.0.1",
+        "prettier": "^3.5.3"
+    },
+    "scripts": {
+        "init:bot": "bun prettier -w . && bun src/"
+    }
+}
