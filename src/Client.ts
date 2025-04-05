@@ -21,7 +21,7 @@ export class CrashClient extends Client<true> {
 
     public init() {
         this.logger.listen();
-        if (Object.values(Config).some((value) => !value.toString())) {
+        if (Object.values(this.config).some((value) => !value.toString())) {
             this.logger.log(LogLevel.ERROR, `Заполни конфиг броу <3`);
             process.exit(1);
         }
