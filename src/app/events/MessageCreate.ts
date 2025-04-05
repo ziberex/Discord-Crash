@@ -1,5 +1,5 @@
 import { Event } from '@src/utils/Event';
-import { CrashClient } from '@src/client';
+import { CrashClient } from '@src/Client';
 import { ChannelType, Message, PermissionFlagsBits } from 'discord.js';
 import { LogLevel } from '@src/logger/enums/LogLevel';
 

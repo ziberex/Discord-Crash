@@ -1,6 +1,6 @@
 import { globSync } from 'glob';
 import { Event } from '@src/utils/Event';
-import { CrashClient } from '@src/client';
+import { CrashClient } from '@src/Client';
 
 export class EventsHandler {
     public constructor(private readonly client: CrashClient) {}

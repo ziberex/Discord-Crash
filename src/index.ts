@@ -1,3 +1,3 @@
-import { CrashClient } from '@src/client';
+import { CrashClient } from '@src/Client';
 
 new CrashClient().init();

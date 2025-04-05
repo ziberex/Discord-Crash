@@ -1,5 +1,5 @@
 import { Client, GatewayIntentBits } from 'discord.js';
-import Config from 'src/config';
+import Config from '@src/Config';
 import { Logger } from '@src/logger/Logger';
 import { LogLevel } from '@src/logger/enums/LogLevel';
 import { EventsHandler } from '@src/utils/Events.handler';

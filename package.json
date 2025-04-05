@@ -17,6 +17,7 @@
         "prettier": "^3.5.3"
     },
     "scripts": {
-        "init:bot": "bun prettier -w . && bun src/"
+        "format": "bun prettier -w .",
+        "init:bot": "bun format && bun src/"
     }
 }

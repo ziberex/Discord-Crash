@@ -1,4 +1,5 @@
 # Discord Crash Bot
+
 ## Stack
 
 - Bun [download](https://bun.sh/)
@@ -8,7 +9,7 @@
 
 1. Clone the repository
 2. Install dependencies `bun install`
-3. Fill config.ts with your data
+3. Fill Config.ts with your data
 4. Run the bot `bun init:bot`
 5. Send !start-crash in any channel
 
